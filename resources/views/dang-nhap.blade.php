@@ -36,33 +36,33 @@
 
                                 <h5 class="auth-title">Sign In</h5>
 
-                                <form action="">
-
+                                <form action="{{route('xu-ly-dang-nhap')}}" method="POST">
+                                    @csrf
                                     <div class="form-group mb-3">
-                                        <label for="emailaddress">Tên đăng nhập</label>
+                                        <label for="ten_dang_nhap">Tên đăng nhập</label>
                                         <input class="form-control" type="text" id="taikhoan" name="ten_dang_nhap" required="" placeholder="Nhập tên tài khoản của bạn">
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="taikhoan" name="mat_khau" placeholder="Enter your password">
+                                        <label for="mat_khau">Password</label>
+                                        <input class="form-control" type="password" required="" id="taikhoan" name="mat_khau" placeholder="Nhập mật khẩu ">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox checkbox-info">
                                             <input type="checkbox" class="custom-control-input" id="checkbox-signin">
-                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                            <label class="custom-control-label" for="checkbox-signin">Ghi nhớ</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-danger btn-block" type="submit"> Log In </button>
+                                        <button class="btn btn-danger btn-block" type="submit"> Đăng nhập </button>
                                     </div>
 
                                 </form>
 
                                 <div class="text-center">
-                                    <h5 class="mt-3 text-muted">Sign in with</h5>
+                                    <h5 class="mt-3 text-muted"></h5>
                                     <ul class="social-list list-inline mt-3 mb-0">
                                         <li class="list-inline-item">
                                             <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>

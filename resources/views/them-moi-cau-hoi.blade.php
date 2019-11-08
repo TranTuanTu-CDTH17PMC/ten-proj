@@ -22,8 +22,14 @@
                                         <input type="text" class="form-control" id="Linhvuc" name="dap_an_d" placeholder="Đáp án d">
                                          <label for="Linhvuc">Đáp Án Đúng</label>
                                         <input type="text" class="form-control" id="Linhvuc" name="dap_an_dung" placeholder="Đáp án đúng">
-                                         <label for="Linhvuc">Lĩnh Vực</label>
-                                        <input type="text" class="form-control" id="Linhvuc" name="linh_vuc" placeholder="lĩnh vực">
+                                        <label for="Linhvuc">Lĩnh Vực</label>
+                                        <br>
+                                        <select name="linh_vuc_id">
+                                            @foreach($linhvuc as $Linhvuc)
+
+                                            <option  value="{{$Linhvuc->id}}">{{$Linhvuc->ten_linh_vuc}}</option>
+                                            @endforeach
+                                              </select>
                                          
                                     </div>
                                     </div>

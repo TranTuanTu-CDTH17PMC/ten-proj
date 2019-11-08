@@ -47,37 +47,50 @@ $(".dataTables_paginate > .pagination").addClass("pagination-rounded")
 @endsection
 
 @section('main-content')
-<h1> Danh sách lĩnh vực </h1> 
+<h1> Thùng rác câu hỏi </h1> 
 
                <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Danh sách lĩnh vực</h4>
-                                <table id="linhvuc-datatable" class="table dt-responsive nowrap">
+                                <h4 class="header-title">Thùng rác câu hỏi</h4>
+                                <table id="cauhoi-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Tên lĩnh vực</th>
-                                            <th>Cập nhật</th>
-                                           
+                                            <th>Câu hỏi</th>
+                                            <th>Đáp án A</th>
+                                            <th>Đáp án B</th>
+                                            <th>Đáp án C</th>
+                                            <th>Đáp án D</th> 
+                                              <th>Đáp án đúng </th>
+                                                <th>Lĩnh vực</th>
+                                                <th>Phục hồi</th>
+
                                         </tr>
                                     </thead>
                                 
                                
                                     <tbody>
-                                     @foreach($linhvuc as $linhvuc)
+                                     @foreach($cauhoi as $cauhoi)
 
                                      <tr>
-                                      <td> {{$linhvuc->id}} </td>
-                                      <td> {{$linhvuc->ten_linh_vuc}} </td>
-                                      <td>
-                                      
-                                        <a href="{{route('linh-vuc.phuc-hoi-linh-vuc',$linhvuc->id)}}">    
-                                        <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-close"></i></button>
+                                      <td> {{$cauhoi->id}} </td>
+                                      <td> {{$cauhoi->cau_hoi}} </td>
+                                       <td> {{$cauhoi->dap_an_a}} </td>
+                                        <td> {{$cauhoi->dap_an_b}} </td>
+                                         <td> {{$cauhoi->dap_an_c}} </td>
+                                          <td> {{$cauhoi->dap_an_d}} </td>
+                                          <td> {{$cauhoi->dap_an_dung}} </td>
+                                          <td> {{$cauhoi->linh_vuc}} </td>
+                                     <td>
+                                        <a href="{{route('cau-hoi.phuc-hoi-cau-hoi',$cauhoi->id)}}">    
+                                        <button type="button" class="btn btn-success waves-effect waves-light">
+                                            <span class="btn-label"><i class="mdi mdi-check-all"></i></span>Phục hồi
+                                        </button>
                                         </a>
-
-
+                                      </td>
+                                      </tr>
                                       </td>
 
                                   </tr> 

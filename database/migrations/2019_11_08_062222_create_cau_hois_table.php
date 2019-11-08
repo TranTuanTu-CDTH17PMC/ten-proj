@@ -13,15 +13,16 @@ class CreateCauHoisTable extends Migration
      */
     public function up()
     {
-        Schema::create('cau_hoi', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('cau_hois', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('cau_hoi');
             $table->string('dap_an_a');
             $table->string('dap_an_b');
             $table->string('dap_an_c');
             $table->string('dap_an_d');
             $table->string('dap_an_dung');
-            $table->string('linh_vuc');
+            $table->unsignedInteger('linh_vuc_id');
+            $table->foreign('linh_vuc_id')->references('id')->on('linh_vucs');
             $table->SoftDeletes();
 
             $table->timestamps();
@@ -35,6 +36,6 @@ class CreateCauHoisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cau_hoi');
+        Schema::dropIfExists('cau_hois');
     }
 }

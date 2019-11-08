@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CauHoi extends Model
 {
- use SoftDeletes;
-  
-  protected	$table = 'cau_hoi';
+    use SoftDeletes;
+  protected	$table = 'cau_hois';
   protected $dates = ['deleted_at'];
 }

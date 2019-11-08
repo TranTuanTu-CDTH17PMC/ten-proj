@@ -57,7 +57,7 @@
                         </li>
             
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-bell noti-icon"></i>
                                 <span class="badge badge-danger rounded-circle noti-icon-badge">5</span>
                             </a>
@@ -146,9 +146,15 @@
 
                             </div>
                         </li>
+                        <a href="{{route('dang-nhap')}}">
+                        <button>
+                            Đăng nhập
+                        </button>
+                    </a>
+
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="{{ asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
                                 <span class="pro-user-name ml-1">
                                     Marcia J. <i class="mdi mdi-chevron-down"></i> 
@@ -201,9 +207,9 @@
 
                     <!-- LOGO -->
                     <div class="logo-box">
-                        <a href="index.html" class="logo text-center">
+                        <a href="{{route('trang-chu')}}" class="logo text-center">
                             <span class="logo-lg">
-                                <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="26">
+                                <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="26">
                                 <!-- <span class="logo-lg-text-dark">Upvex</span> -->
                             </span>
                             <span class="logo-sm">
@@ -216,7 +222,7 @@
                     <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
             
                         <li class="dropdown d-none d-lg-block">
-                            <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="" role="button" aria-haspopup="false" aria-expanded="false">
                                 Reports
                                 <i class="mdi mdi-chevron-down"></i> 
                             </a>

@@ -69,7 +69,7 @@ $(".dataTables_paginate > .pagination").addClass("pagination-rounded")
                                             <th>Đáp án D</th> 
                                               <th>Đáp án đúng </th>
                                                 <th>Lĩnh vực</th>
-
+                                                
                                         </tr>
                                     </thead>
                                 
@@ -85,7 +85,7 @@ $(".dataTables_paginate > .pagination").addClass("pagination-rounded")
                                          <td> {{$cauhoi->dap_an_c}} </td>
                                           <td> {{$cauhoi->dap_an_d}} </td>
                                           <td> {{$cauhoi->dap_an_dung}} </td>
-                                          <td> {{$cauhoi->linh_vuc}} </td>
+                                          <td>  {{$cauhoi->linh_vuc_id}} </td> 
                                       <td>
                                         <a href="{{ route('cau-hoi.xl-cap-nhat-cau-hoi',$cauhoi->id)}}">
                                           <button type="button" class="btn btn-purple waves-effect waves-light"><i class="mdi mdi-settings"></i></button>

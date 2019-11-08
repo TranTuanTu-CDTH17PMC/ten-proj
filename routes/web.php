@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function(){
-	return view('dangnhap');
-	});
+Route::get('/','LinhVucController@trangchu')->name('trang-chu');
+
+Route::get('/dang-nhap','AdminController@DangNhap')->name('dang-nhap');
+
+Route::post('/dang-nhap','AdminController@XuLyDangNhap')->name('xu-ly-dang-nhap');
 
 
 // CONTROLLER LĨNH VỰC
