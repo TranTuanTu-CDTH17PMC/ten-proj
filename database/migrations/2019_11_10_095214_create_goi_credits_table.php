@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminsTable extends Migration
+class CreateGoiCreditsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('ten_dang_nhap');
-            $table->string('mat_khau');
-            $table->string('ho_ten');
-            
+        Schema::create('goi_credits', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('ten_goi');
+            $table->unsignedInteger('create');
+            $table->unsignedInteger('so_tien');
             $table->timestamps();
+              $table->SoftDeletes();
         });
     }
 
@@ -30,6 +30,6 @@ class CreateAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('goi_credits');
     }
 }

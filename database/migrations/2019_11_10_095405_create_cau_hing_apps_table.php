@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminsTable extends Migration
+class CreateCauHingAppsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('ten_dang_nhap');
-            $table->string('mat_khau');
-            $table->string('ho_ten');
-            
+        Schema::create('cau_hing_apps', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('co_hoi_sai');
+            $table->integer('thoi_gian_tra_loi');
             $table->timestamps();
+             $table->SoftDeletes();
         });
     }
 
@@ -30,6 +29,6 @@ class CreateAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('cau_hing_apps');
     }
 }
