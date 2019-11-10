@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\LinhVuc;
 
+
 class LinhVucController extends Controller
 {
     /**
@@ -40,7 +41,7 @@ class LinhVucController extends Controller
        $linh_vuc=new LinhVuc;
        $linh_vuc->ten_linh_vuc=$request->ten_linh_vuc;
        $linh_vuc->save();
-       return redirect('/linh-vuc')->with('success','Thêm mới thành công');
+       return redirect('/linh-vuc')->with('success','Thêm mới thành công',compact('linhvuc'));
 
     }
 
@@ -112,5 +113,10 @@ class LinhVucController extends Controller
         LinhVuc::withTrashed()->where('id',$id)->restore();
       
  return redirect('/linh-vuc')->with('success','phục hồi thành công');
+    }
+
+    public function trangchu()
+    {
+        return view('layout',compact('linhvuc'));
     }
 }

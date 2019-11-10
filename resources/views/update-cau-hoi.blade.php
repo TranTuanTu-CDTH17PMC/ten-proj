@@ -6,7 +6,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="mb-3 header-title">Cập nhật lĩnh vực</h2>
+                                 <h4 class="header-title">Danh sách Câu hỏi</h4>
 
                                 <form  action="{{route('cau-hoi.cap-nhat-cau-hoi',$cau_hoi->id)}}" method="POST">
                                     @csrf

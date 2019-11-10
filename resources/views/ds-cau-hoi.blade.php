@@ -67,36 +67,30 @@ $(".dataTables_paginate > .pagination").addClass("pagination-rounded")
                                             <th>Đáp án B</th>
                                             <th>Đáp án C</th>
                                             <th>Đáp án D</th> 
-                                              <th>Đáp án đúng </th>
-                                                <th>Lĩnh vực</th>
-
+                                            <th>Đáp án đúng </th>
+                                            <th>Lĩnh vực</th>
+                                            <th>Cập nhật</th>
                                         </tr>
                                     </thead>
-                                
-                               
                                     <tbody>
-                                     @foreach($cauhoi as $cauhoi)
-
-                                     <tr>
-                                      <td> {{$cauhoi->id}} </td>
-                                      <td> {{$cauhoi->cau_hoi}} </td>
-                                       <td> {{$cauhoi->dap_an_a}} </td>
-                                        <td> {{$cauhoi->dap_an_b}} </td>
-                                         <td> {{$cauhoi->dap_an_c}} </td>
-                                          <td> {{$cauhoi->dap_an_d}} </td>
-                                          <td> {{$cauhoi->dap_an_dung}} </td>
-                                          <td> {{$cauhoi->linh_vuc}} </td>
-                                      <td>
-                                        <a href="{{ route('cau-hoi.xl-cap-nhat-cau-hoi',$cauhoi->id)}}">
-                                          <button type="button" class="btn btn-purple waves-effect waves-light"><i class="mdi mdi-settings"></i></button>
-                                        </a>
-                                          <a href="{{ route('cau-hoi.xoa-cau-hoi',$cauhoi->id)}}">
-                                        <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-close"></i></button>
-
-
-                                      </td>
-
-                                  </tr> 
+                                     @foreach($cau_hoi as $cau_hoi)
+                                      <tr>
+                                        <td> {{$cau_hoi->id}} </td>
+                                        <td> {{$cau_hoi->cau_hoi}} </td>
+                                        <td> {{$cau_hoi->dap_an_a}} </td>
+                                        <td> {{$cau_hoi->dap_an_b}} </td>
+                                        <td> {{$cau_hoi->dap_an_c}} </td>
+                                        <td> {{$cau_hoi->dap_an_d}} </td>
+                                        <td> {{$cau_hoi->dap_an_dung}} </td>
+                                        <td>  {{$cau_hoi->linh_vuc_id}} </td> 
+                                        <td>
+                                          <a href="{{ route('cau-hoi.xl-cap-nhat-cau-hoi',$cau_hoi->id)}}">
+                                            <button type="button" class="btn btn-purple waves-effect waves-light"><i class="mdi mdi-settings"></i></button>
+                                          </a>
+                                            <a href="{{ route('cau-hoi.xoa-cau-hoi',$cau_hoi->id)}}">
+                                          <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-close"></i></button>
+                                        </td>
+                                      </tr> 
                                   @endforeach
                                   
                               </tbody>
