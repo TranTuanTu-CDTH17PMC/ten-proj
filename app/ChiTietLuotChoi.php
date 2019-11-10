@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class Admin extends Model
+
+class ChiTietLuotChoi extends Model
 {
-     use SoftDeletes;
-  protected	$table = 'admin';
+      use SoftDeletes;
+  protected	$table = 'chi_tiet_luot_chois';
   protected $dates = ['deleted_at'];
 }
