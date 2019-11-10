@@ -1,8 +1,8 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Upvex - Responsive Admin Dashboard Template</title>
+        <title>Đồ án Laravel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -57,7 +57,7 @@
                         </li>
             
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-bell noti-icon"></i>
                                 <span class="badge badge-danger rounded-circle noti-icon-badge">5</span>
                             </a>
@@ -145,11 +145,9 @@
                                 </a>
 
                             </div>
+
                         </li>
-                        <a href="{{route('dang-nhap')}}">
-                        <button>
-                            Đăng nhập
-                        </button>
+                      
                     </a>
 
 
@@ -203,6 +201,14 @@
                             </a>
                         </li>
 
+                        <li>
+                            <br>
+                              <a href="{{route('dang-nhap')}}">
+                        <button>
+                            Đăng nhập
+                        </button>
+                        
+                        </li>
                     </ul>
 
                     <!-- LOGO -->
@@ -222,7 +228,7 @@
                     <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
             
                         <li class="dropdown d-none d-lg-block">
-                            <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 Reports
                                 <i class="mdi mdi-chevron-down"></i> 
                             </a>
@@ -861,17 +867,6 @@
         <!-- App js-->
         <script src="{{ asset('assets/js/app.min.js') }}"></script>
 
-
-
-
-
-        <!-- Vendor js -->
-        <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-
-        @yield('js')
-        
-        <!-- App js-->
-        <script src="{{ asset('assets/js/app.min.js') }}"></script>
         
     </body>
 </html>
