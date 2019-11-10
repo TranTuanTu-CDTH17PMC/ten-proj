@@ -12,9 +12,9 @@ class CauHoiController extends Controller
    
     public function index()
     {
-         $linhvuc = LinhVuc::all();
-         $cauhoi=DB::table('cau_hois')->whereNull('deleted_at')->get();
-        return view('ds-cau-hoi',compact('cauhoi','linhvuc'));
+         
+         $cau_hoi=DB::table('cau_hois')->whereNull('deleted_at')->get();
+        return view('ds-cau-hoi',compact('cau_hoi'));
     }
 
    
@@ -28,7 +28,7 @@ class CauHoiController extends Controller
     
     public function store(Request $request)
     {
-        $linhvuc = LinhVuc::all();
+
         $cau_hoi=new CauHoi();
         $cau_hoi->cau_hoi=$request->cau_hoi;
         $cau_hoi->dap_an_a=$request->dap_an_a;
@@ -38,7 +38,7 @@ class CauHoiController extends Controller
         $cau_hoi->dap_an_dung=$request->dap_an_dung;
         $cau_hoi->linh_vuc_id=$request->linh_vuc_id;
         $cau_hoi->save();
-        return view('ds-cau-hoi',compact('linhvuc','cau_hoi'));
+        return redirect('/cau-hoi')->with('success','Thêm mới thành công',compact('cau_hoi'));
     }
     
 
@@ -58,15 +58,15 @@ class CauHoiController extends Controller
 
     public function update(Request $request, $id)
     {
-         $cauhoi=CauHoi::find($id);
-         $cauhoi->cau_hoi=$request->cau_hoi;
-         $cauhoi->dap_an_a=$request->dap_an_a;
-         $cauhoi->dap_an_b=$request->dap_an_b;
-         $cauhoi->dap_an_c=$request->dap_an_c;
-         $cauhoi->dap_an_d=$request->dap_an_d;
-         $cauhoi->dap_an_dung=$request->dap_an_dung;
-         $cauhoi->linh_vuc=$request->linh_vuc;
-         $cauhoi->save();
+         $cau_hoi=CauHoi::find($id);
+         $cau_hoi->cau_hoi=$request->cau_hoi;
+         $cau_hoi->dap_an_a=$request->dap_an_a;
+         $cau_hoi->dap_an_b=$request->dap_an_b;
+         $cau_hoi->dap_an_c=$request->dap_an_c;
+         $cau_hoi->dap_an_d=$request->dap_an_d;
+         $cau_hoi->dap_an_dung=$request->dap_an_dung;
+         $cau_hoi->linh_vuc=$request->linh_vuc;
+         $cau_hoi->save();
       
        
        return redirect('/cau-hoi')->with('success','cập nhật thành công');
@@ -75,8 +75,8 @@ class CauHoiController extends Controller
    
     public function destroy($id)
     {
-        $cauhoi=CauHoi::find($id);
-        $cauhoi->delete();
+        $cau_hoi=CauHoi::find($id);
+        $cau_hoi->delete();
          return redirect('/cau-hoi')->with('success','xóa thành công');
     }
      public function thungrac()
@@ -88,7 +88,7 @@ class CauHoiController extends Controller
 
     public function phuchoi($id)
     {   
-        //$cauhoi=LinhVuc::onlyTrashed($id)->restore();
+        
 
           CauHoi::withTrashed()->where('id',$id)->restore();
       
